@@ -2,7 +2,7 @@ import { PiWarehouse } from "react-icons/pi";
 import { MdOutlineAddBusiness } from "react-icons/md";
 import { SiRenovatebot } from "react-icons/si";
 
-const serviceListings = [
+const serviceListingsInfo = [
   {
     "title": "Framing",
     "text":"Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove.",
@@ -21,4 +21,4 @@ const serviceListings = [
 ]
 
 
-export default serviceListings;
+export default serviceListingsInfo;

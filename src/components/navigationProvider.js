@@ -17,11 +17,9 @@ const NavigationProvider = ({ children }) => {
   }
 
   const [currentRoute, setCurrentRoute] = useState('Home');
-  const [CurrentPage, setCurrentPage] = useState(Home);
-
+  
   const navigateTo = (route) => {
     setCurrentRoute(route);
-    setCurrentPage(pageIndex[route]);
   };
 
   const contextValue = {

@@ -1,34 +1,38 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 
 import logoPic from '../assets/logo.png';
 
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoIosClose } from "react-icons/io";
+import { NavigationContext } from "./navigationProvider";
 
 
 
 
 
 function Drawer ({closeDrawer}) {
+  const { navigateTo } = useContext(NavigationContext);
+
+  // styles
   const menuItemStyle = 'bg-blue-400 text-lg my-3 hover:bg-blue-600 hover:cursor-pointer';
 
   return (
     <>
       {/* menu */}
       <div className="fixed right-0 h-full bg-green-700 w-40 pt-12 px-5">
-        <div className={menuItemStyle}>
+        <div className={menuItemStyle} onClick={() => {navigateTo('Services'); closeDrawer()}}>
           Services
         </div>
-        <div className={menuItemStyle}>
+        <div className={menuItemStyle} onClick={() => {navigateTo('Portfolio'); closeDrawer()}}>
           Portfolio
         </div>
-        <div className={menuItemStyle}>
+        <div className={menuItemStyle} onClick={() => {navigateTo('Home'); closeDrawer()}}>
           Home
         </div>
-        <div className={menuItemStyle}>
+        <div className={menuItemStyle} onClick={() => {navigateTo('Testimonials'); closeDrawer()}}>
           Testimonials
         </div>
-        <div className={menuItemStyle}>
+        <div className={menuItemStyle} onClick={() => {navigateTo('Contact Us'); closeDrawer()}}>
           Contact Us
         </div>
 

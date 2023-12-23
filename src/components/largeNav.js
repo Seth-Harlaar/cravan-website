@@ -9,7 +9,8 @@ import { NavigationContext } from "./navigationProvider";
 
 function LargeNav() {
   // const sideLinkStyle = "text-yellow-500 hover:text-gray-500 text-center bg-red-700 flex-none w-[120px]";
-  const linkWrapperStyle = "bg-blue-700 hover:bg-blue-500 h-full w-[120px] justify-center flex items-center";
+  const linkWrapperStyle = "h-full w-[120px] justify-center flex items-center " +
+    " bg-darkBg hover:bg-darkBgHover ";
 
 
   const { navigateTo } = useContext(NavigationContext);
@@ -18,11 +19,11 @@ function LargeNav() {
   return (
     <>
     {/* the whole thing */}
-      <div className="fixed w-full bg-blue-400">
+      <div className="fixed z-50 w-full text-white">
 
         {/* the other buttons */}
         <div className="">
-          <div className="flex justify-center items-center bg-red-500 min-w-[640px] h-24">
+          <div className="flex justify-center items-center bg-darkBg min-w-[640px] h-24">
             <div className={linkWrapperStyle} onClick={() => navigateTo('Services')}>
               Services
             </div>
@@ -42,7 +43,7 @@ function LargeNav() {
         {/* middle part */}
         <div onClick={() => navigateTo('Home')}
           className='fixed top-0 left-1/2 transform -translate-x-1/2 h-40 w-40 
-                        flex flex-col items-center justify-center bg-yellow-700 
+                        flex flex-col items-center justify-center bg-darkBgLight
                         hover:cursor-pointer'>
           <img src={logoPic} alt="" className='h-24 w-24'/>
           <div>

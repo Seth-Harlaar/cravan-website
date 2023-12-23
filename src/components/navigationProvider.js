@@ -1,14 +1,11 @@
 import React, { createContext, useState } from 'react';
-import Home from '../pages/home';
-import Services from '../pages/services';
-import Portfolio from '../pages/portfolio';
-import Testimonials from '../pages/testimonials';
-import ContactUs from '../pages/contactUs';
+import Home from '../pages/homeComponents/home';
+import Services from '../pages/serviceComponents/services';
+import Portfolio from '../pages/portfolioComponents/portfolio';
+import Testimonials from '../pages/testimonialComponents/testimonials';
+import ContactUs from '../pages/contactUsComponents/contactUs';
 
 const NavigationContext = createContext();
-
-
-
 
 const NavigationProvider = ({ children }) => {
   const pageIndex = {
@@ -30,7 +27,7 @@ const NavigationProvider = ({ children }) => {
   const contextValue = {
     currentRoute,
     navigateTo,
-    CurrentPage,
+    pageIndex,
   };
 
   return (

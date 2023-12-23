@@ -5,15 +5,15 @@ import SmallNav from '../components/smallNav';
 import { scrSmall } from '../utils/globals';
 import { NavigationContext } from '../components/navigationProvider';
 import PageBanner from '../components/pageBanner';
-
-
+import HomeBanner from '../pages/homeComponents/homeBanner';
 
 
 function Main() {
-  const { CurrentPage, currentRoute } = useContext(NavigationContext);
+  const { pageIndex, currentRoute } = useContext(NavigationContext);
 
   const [isSmallScreen, setIsSmallScreen] = useState(false);
-  
+
+  const PageComponent = pageIndex[currentRoute];
 
   useEffect(() => {
     const handleResize = () => {
@@ -27,13 +27,15 @@ function Main() {
     };
   }, []);
 
-
   return (
     <>
       {!isSmallScreen ? <LargeNav/> : <SmallNav/>}
-      <PageBanner isSmallScreen={isSmallScreen} title={currentRoute} description={"world"}/>
+      {currentRoute === 'Home' ? 
+        <HomeBanner isSmallScreen={isSmallScreen}/> :
+        <PageBanner isSmallScreen={isSmallScreen} title={currentRoute} description={"world"}/>}
+      
       <div>
-        {CurrentPage}
+        <PageComponent isSmallScreen={isSmallScreen}/>
       </div>
     </>
   )

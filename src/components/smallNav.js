@@ -1,17 +1,19 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 
 import logoPic from '../assets/logo.png';
 
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoIosClose } from "react-icons/io";
-import { NavigationContext } from "./navigationProvider";
+import { NavLink } from "react-router-dom";
 
 
 
 
 
 function Drawer ({closeDrawer}) {
-  const { navigateTo } = useContext(NavigationContext);
+  function navigateTo(){
+
+  }
 
   // styles
   const menuItemStyle = 'bg-darkBgLight text-white text-lg my-3 px-5 py-2' + 
@@ -21,22 +23,12 @@ function Drawer ({closeDrawer}) {
     <>
       <div className="z-50 fixed h-screen w-screen bg-drawerClearBg">
         {/* menu */}
-        <div className="z-50 absolute right-0 h-full bg-darkBg w-40 pt-12">
-          <div className={menuItemStyle} onClick={() => {navigateTo('Services'); closeDrawer()}}>
-            Services
-          </div>
-          <div className={menuItemStyle} onClick={() => {navigateTo('Portfolio'); closeDrawer()}}>
-            Portfolio
-          </div>
-          <div className={menuItemStyle} onClick={() => {navigateTo('Home'); closeDrawer()}}>
-            Home
-          </div>
-          <div className={menuItemStyle} onClick={() => {navigateTo('Testimonials'); closeDrawer()}}>
-            Testimonials
-          </div>
-          <div className={menuItemStyle} onClick={() => {navigateTo('Contact Us'); closeDrawer()}}>
-            Contact Us
-          </div>
+        <div className="z-50 absolute right-0 flex flex-col h-full bg-darkBg w-40 pt-12">
+          <NavLink className={menuItemStyle} to='services'>Services</NavLink>
+          <NavLink className={menuItemStyle} to='portfolio'>Portfolio</NavLink>
+          <NavLink className={menuItemStyle} to='/'>Home</NavLink>
+          <NavLink className={menuItemStyle} to='testimonials'>Testimonials</NavLink>
+          <NavLink className={menuItemStyle} to='contact'>Contact Us</NavLink>
 
           {/* the close button */}
           <div className="absolute top-2 right-2 text-white h-8 w-8 hover:cursor-pointer" onClick={closeDrawer}>

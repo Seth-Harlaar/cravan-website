@@ -1,19 +1,30 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect } from 'react';
+import {Route, Routes } from 'react-router-dom';
+
+// globals
+import { scrSmall } from '../utils/globals';
+
+// navigators
 import LargeNav from '../components/largeNav';
 import SmallNav from '../components/smallNav';
 
-import { scrSmall } from '../utils/globals';
-import { NavigationContext } from '../components/navigationProvider';
-import PageBanner from '../components/pageBanner';
-import HomeBanner from '../pages/homeComponents/homeBanner';
+// pages
+import Home from '../pages/homeComponents/home';
+import Portfolio from '../pages/portfolioComponents/portfolio';
+import Services from '../pages/serviceComponents/services';
+import Testimonials from '../pages/testimonialComponents/testimonials';
+import ContactUs from '../pages/contactUsComponents/contactUs';
+
+
+
 
 
 function Main() {
-  const { pageIndex, currentRoute } = useContext(NavigationContext);
+  // const { pageIndex, currentRoute } = useContext(NavigationContext);
 
   const [isSmallScreen, setIsSmallScreen] = useState(false);
 
-  const PageComponent = pageIndex[currentRoute];
+  // const PageComponent = pageIndex[currentRoute];
 
   useEffect(() => {
     const handleResize = () => {
@@ -30,13 +41,13 @@ function Main() {
   return (
     <>
       {!isSmallScreen ? <LargeNav/> : <SmallNav/>}
-      {currentRoute === 'Home' ? 
-        <HomeBanner isSmallScreen={isSmallScreen}/> :
-        <PageBanner isSmallScreen={isSmallScreen} title={currentRoute} description={"world"}/>}
-      
-      <div>
-        <PageComponent isSmallScreen={isSmallScreen}/>
-      </div>
+      <Routes>
+        <Route index element={<Home/>} />
+        <Route path="services" element={<Services />} />
+        <Route path="portfolio" element={<Portfolio />} />
+        <Route path="testimonials" element={<Testimonials />} />
+        <Route path="contact" element={<ContactUs />} />
+      </Routes>
     </>
   )
 }

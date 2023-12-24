@@ -1,11 +1,15 @@
 import React from "react";
+import PageBanner from "../../components/pageBanner";
 
 
 function ContactUs() {
     return (
-      <div>
-        contact us
-      </div>
+      <>
+        <PageBanner />
+        <div>
+          contact us
+        </div>
+      </>
     );
   }
   

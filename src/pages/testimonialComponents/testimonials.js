@@ -1,11 +1,15 @@
 import React from "react";
+import PageBanner from "../../components/pageBanner";
 
 
 function Testimonials() {
   return (
-    <div>
-      Testimonials
-    </div>
+    <>
+      <PageBanner/>
+      <div>
+        Testimonials
+      </div>
+    </>
   );
 }
   

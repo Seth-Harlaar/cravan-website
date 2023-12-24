@@ -7,7 +7,10 @@ function HomeBanner ({isSmallScreen}) {
   const padding = isSmallScreen ? ' pt-[20px] ' : ' pt-[180px] ';
   const backgroundImage = " bg-[url('./assets/pictures/garage.jpg')] bg-cover bg-center bg-no-repeat ";
 
-  const { navigateTo } = useContext(NavigationContext);
+  // const { navigateTo } = useContext(NavigationContext);
+  function navigateTo() {
+    
+  }
 
   return(
     <>

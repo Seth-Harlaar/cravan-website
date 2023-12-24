@@ -1,11 +1,15 @@
 import React from "react";
+import PageBanner from "../../components/pageBanner";
 
 
 function Portfolio() {
     return (
-      <div>
-        portfolio
-      </div>
+      <>
+        <PageBanner />
+        <div>
+          portfolio
+        </div>
+      </>
     );
   }
   

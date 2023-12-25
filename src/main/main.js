@@ -42,7 +42,7 @@ function Main() {
     <>
       {!isSmallScreen ? <LargeNav/> : <SmallNav/>}
       <Routes>
-        <Route index element={<Home/>} />
+        <Route index element={<Home isSmallScreen={isSmallScreen}/>} />
         <Route path="services" element={<Services />} />
         <Route path="portfolio" element={<Portfolio />} />
         <Route path="testimonials" element={<Testimonials />} />

@@ -28,7 +28,7 @@ function ServiceListing({title, text, Icon, isSmallScreen}){
 
 
 function HomeServiceBlocks ({isSmallScreen}) {
-  console.log(isSmallScreen);
+  
   const serviceListingContainer = !isSmallScreen ? 
     "flex flex-wrap justify-center" :
     "";

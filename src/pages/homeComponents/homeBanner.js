@@ -1,16 +1,12 @@
-import React, { useContext } from "react";
+import React from "react";
 import { FaArrowRight } from "react-icons/fa";
-import { NavigationContext } from "../../components/navigationProvider";
+import { Link } from "react-router-dom";
 
 function HomeBanner ({isSmallScreen}) {
   const height = isSmallScreen ? ' h-60 ' : ' h-[400px] ';
   const padding = isSmallScreen ? ' pt-[20px] ' : ' pt-[180px] ';
   const backgroundImage = " bg-[url('./assets/pictures/garage.jpg')] bg-cover bg-center bg-no-repeat ";
 
-  // const { navigateTo } = useContext(NavigationContext);
-  function navigateTo() {
-    
-  }
 
   return(
     <>
@@ -25,15 +21,15 @@ function HomeBanner ({isSmallScreen}) {
             </div>
 
             {/* floating portfolio button */}
-            <div className="absolute bottom-0 right-5 translate-y-2/3 
+            <Link to="/portfolio"
+                className="absolute bottom-0 right-5 translate-y-2/3 
                 bg-highlight py-1 px-2 flex items-center hover:cursor-pointer 
-                hover:bg-highlightHover"
-                onClick={() => navigateTo('Portfolio')}>
+                hover:bg-highlightHover">
               <div className="mr-2">
                 View Portfolio
               </div>
               <FaArrowRight/>
-            </div>
+            </Link>
           </div>
         </div>
       </div>

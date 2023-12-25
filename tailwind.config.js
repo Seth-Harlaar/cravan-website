@@ -18,7 +18,7 @@ module.exports = {
         "lightTextHover": "#ffffff",
         "lightText": "#ffffff",
 
-        "drawerClearBg": "rgba(0,0,0, .7)",
+        "drawerClearBg": "rgba(0,0,0,.7)",
       }
     },
   },

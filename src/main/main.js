@@ -14,6 +14,7 @@ import Portfolio from '../pages/portfolioComponents/portfolio';
 import Services from '../pages/serviceComponents/services';
 import Testimonials from '../pages/testimonialComponents/testimonials';
 import ContactUs from '../pages/contactUsComponents/contactUs';
+import Footer from '../components/footer';
 
 
 
@@ -48,6 +49,7 @@ function Main() {
         <Route path="testimonials" element={<Testimonials />} />
         <Route path="contact" element={<ContactUs />} />
       </Routes>
+      <Footer/>
     </>
   )
 }

@@ -3,7 +3,6 @@ import { FaArrowRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 function HomeBanner ({isSmallScreen}) {
-  const height = isSmallScreen ? ' h-60 ' : ' h-[400px] ';
   const padding = isSmallScreen ? ' pt-[20px] ' : ' pt-[180px] ';
   const backgroundImage = " bg-[url('./assets/pictures/garage.jpg')] bg-cover bg-center bg-no-repeat ";
 

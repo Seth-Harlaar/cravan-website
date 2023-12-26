@@ -1,8 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useContext } from 'react';
 import {Route, Routes } from 'react-router-dom';
-
-// globals
-import { scrSmall } from '../utils/globals';
+import {ScreenContext} from '../components/screenProvider';
 
 // navigators
 import LargeNav from '../components/largeNav';
@@ -21,23 +19,7 @@ import Footer from '../components/footer';
 
 
 function Main() {
-  // const { pageIndex, currentRoute } = useContext(NavigationContext);
-
-  const [isSmallScreen, setIsSmallScreen] = useState(false);
-
-  // const PageComponent = pageIndex[currentRoute];
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsSmallScreen(window.innerWidth < scrSmall);
-    };
-
-    window.addEventListener('resize', handleResize);
-    handleResize();
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
+  const {isSmallScreen} = useContext(ScreenContext);
 
   return (
     <>

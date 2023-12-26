@@ -27,7 +27,7 @@ function Footer(){
             Email
           </div>
           <div className="text-sm">
-            sjharlaar@gmail.com
+            cravanconstruction@gmail.com
           </div>
         </div>
         <div>
@@ -35,7 +35,7 @@ function Footer(){
             Phone
           </div>
           <div className="text-sm">
-            519-400-2692
+            519-400-2222
           </div>
         </div>
         <div>

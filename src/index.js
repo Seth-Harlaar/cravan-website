@@ -7,12 +7,15 @@ import Main from './main/main';
 
 // styles
 import './index.css';
+import { ScreenProvider } from './components/screenProvider';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <Main/>
-    </BrowserRouter>
+    <ScreenProvider>
+      <BrowserRouter>
+        <Main/>
+      </BrowserRouter>
+    </ScreenProvider>
   </React.StrictMode>
 );

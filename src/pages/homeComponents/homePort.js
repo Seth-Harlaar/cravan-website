@@ -15,7 +15,7 @@ function Image({picture, isSmallScreen}){
   return (
     <>
       <div className="relative group mt-5">
-        <img src={picture} className={photoStyle}/>
+        <img src={picture} alt="portfolio pic" className={photoStyle}/>
         <div className="hover:bg-drawerClearBg h-full w-full absolute top-0 left-0">
           <div className="invisible group-hover:visible absolute bottom-10 left-10">
             explanation text

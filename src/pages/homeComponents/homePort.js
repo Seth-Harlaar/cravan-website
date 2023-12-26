@@ -39,7 +39,7 @@ function HomePort({isSmallScreen}) {
           Our Work
         </div>
         <div className="text-">
-          Some insirational message
+          Explore some of our projects.
         </div>
 
         {/* pictures */}

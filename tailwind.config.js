@@ -19,6 +19,7 @@ module.exports = {
         "lightText": "#ffffff",
 
         "drawerClearBg": "rgba(0,0,0,.7)",
+        "clear": "rgba(0,0,0,0)"
       }
     },
   },

@@ -16,7 +16,7 @@ function PageBanner ({title, description, isSmallScreen}) {
         </div>
       </div>
     </>
-  )
+  );
 }
 
 export default PageBanner;

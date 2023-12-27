@@ -13,6 +13,7 @@ import Services from '../pages/serviceComponents/services';
 import Testimonials from '../pages/testimonialComponents/testimonials';
 import ContactUs from '../pages/contactUsComponents/contactUs';
 import Footer from '../components/footer';
+import ScrollToTop from '../components/scrollToTop';
 
 
 
@@ -24,6 +25,7 @@ function Main() {
   return (
     <>
       {!isSmallScreen ? <LargeNav/> : <SmallNav/>}
+      <ScrollToTop/>
       <Routes>
         <Route index element={<Home isSmallScreen={isSmallScreen}/>} />
         <Route path="services" element={<Services />} />

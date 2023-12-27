@@ -8,7 +8,7 @@ import { FaArrowRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 
-function Image({picture, isSmallScreen}){
+function PortImage({picture, isSmallScreen}){
   const photoDimensions = isSmallScreen ? " w-full h-[400px] " : " w-[300px] h-[200px] ";
   const photoStyle = `object-cover ${photoDimensions} `;
 
@@ -46,8 +46,8 @@ function HomePort({isSmallScreen}) {
         <div className="w-full ">
           <div className={galleryFlex + " w-full "}>
               {/* create a picture for each in the list */}
-              {picList.map((picture) => {
-                return(<Image picture={picture} isSmallScreen={isSmallScreen}/>)
+              {picList.map((picture, index) => {
+                return(<PortImage picture={picture} isSmallScreen={isSmallScreen} key={index}/>)
               })}
           </div>
         </div>

@@ -18,7 +18,7 @@ function ScreenProvider({children}){
     const handleResize = () => {
       const wid = window.innerWidth;
       setIsSmallScreen(wid <= scrSmall);
-      setIsMedScreen(wid > scrSmall && wid <= scrMed);
+      setIsMedScreen(wid <= scrMed);
       setIsLrgScreen(wid > scrMed);
     };
 

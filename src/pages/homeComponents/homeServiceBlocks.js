@@ -45,13 +45,12 @@ function HomeServiceBlocks ({isSmallScreen}) {
 
         <div className={serviceListingContainer}>
           {/* map each service listing */}
-          {serviceListingsInfo.map((service) => {
-
+          {serviceListingsInfo.map((service, index) => {
             return(
               <>
-                <ServiceListing 
+                <ServiceListing key={index}
                   title={service.title} text={service.text} Icon={service.icon} 
-                  isSmallScreen={isSmallScreen} />
+                  isSmallScreen={isSmallScreen}/>
               </>
             )
           })}

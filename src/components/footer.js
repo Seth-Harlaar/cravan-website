@@ -49,7 +49,7 @@ function ContactLink(){
         </div>
 
         {/* contact button */}
-        <Link className="p-4 bg-highlight w-32">
+        <Link className="p-4 bg-highlight w-32" to="/contact"> 
           Contact us <CiMail className="inline-block"/>
         </Link>
       </div>

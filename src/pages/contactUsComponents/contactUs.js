@@ -8,10 +8,8 @@ function ContactUs() {
 
   return (
     <>
-      <PageBanner title={"Contact Us"} description={"Feel free to reach out."} isSmallScreen={isSmallScreen}/>
-      <div>
-        <ContactForm/>
-      </div>
+      <PageBanner title={"Contact Us"} description={"We'd love to chat."} isSmallScreen={isSmallScreen}/>
+      <ContactForm/>
     </>
   );
 }

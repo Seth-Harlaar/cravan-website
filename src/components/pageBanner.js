@@ -11,7 +11,7 @@ function PageBanner ({title, description, isSmallScreen}) {
         <div className="text-6xl">
           {title}
         </div>
-        <div className="text-3xl">
+        <div className="text-2xl">
           {description}
         </div>
       </div>

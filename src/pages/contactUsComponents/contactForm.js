@@ -5,7 +5,7 @@ import ContactModal from "./contactModal";
 // modal messages
 const sentMessage = "Thank you for reaching out! Your message has been successfully sent. We will attend to your message as soon as possible."
 const invalidEmailMessage = "Invalid email format.";
-const missingFieldsMessage = "Please fill out all the required fields.";
+const missingFieldsMessage = "Please fill out all the fields.";
 const emailErrorMessage = "There was an error while sending your email, please try again."
 
 

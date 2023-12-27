@@ -2,18 +2,24 @@ import React, { useState } from "react";
 import emailjs from 'emailjs-com';
 import ContactModal from "./contactModal";
 
+// modal messages
+const sentMessage = "Thank you for reaching out! Your message has been successfully sent. We will attend to your message as soon as possible."
+const invalidEmailMessage = "Invalid email format.";
+const missingFieldsMessage = "Please fill out all the required fields.";
+const emailErrorMessage = "There was an error while sending your email, please try again."
 
 
 function ContactForm() {
+  const [modalMessage, setModalMessage] = useState(sentMessage);
   const [modalOpen, setModalOpen] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     message: '',
-    // Add more fields as needed
   });
 
-  function openModal(){
+  function openModal(message){
+    setModalMessage(message);
     setModalOpen(true);
   }
 
@@ -25,7 +31,7 @@ function ContactForm() {
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
-  };
+  }
 
   // input verification on submit
   const handleSubmit = (e) => {
@@ -40,11 +46,11 @@ function ContactForm() {
 
     // check empty fields
     if (isEmpty) {
-      alert('Please fill in all fields');
+      openModal(missingFieldsMessage);
     
     // check valid email
     } else if(!validEmail) {
-      alert('invalid email format');
+      openModal(invalidEmailMessage);
 
     // proceed
     } else {
@@ -61,15 +67,15 @@ function ContactForm() {
       .then((result) => {
           const form = document.getElementById("email-form");
           form.reset();
-          console.log('email sent');
-          openModal();
+          openModal(sentMessage);
       }, (error) => {
           console.log(error.text);
+          openModal(emailErrorMessage);
       });
   }
 
+  // styles
   const inputWrapperStyle = "relative py-4 ";
-
   const inputStyle = " outline-none text-xl py-2 border-b-2 border-darkBgLight w-full peer duration-200 " +
     " placeholder:text-clear placeholder-shown:" + 
     " focus:border-highlight ";
@@ -105,9 +111,9 @@ function ContactForm() {
       </div>
 
       {/* modal */}
-      {modalOpen && <ContactModal closeModal={closeModal}/>}
+      {modalOpen && <ContactModal closeModal={closeModal} modalMessage={modalMessage}/>}
     </>
-  )
+  );
 }
 
 export default ContactForm;

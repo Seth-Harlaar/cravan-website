@@ -15,9 +15,12 @@ function Portfolio() {
 
   return (
     <>
-      <PageBanner title={"Our Projects"} description={"See some of the work we've done."} isSmallScreen={isSmallScreen} />
+      <PageBanner title={"Our Projects"} description={"See some of the work we've done."} isSmallScreen={isSmallScreen}/>
       <div>
-        <ProjectGallery projectInfo={portfolioContent[0]}/>
+        {portfolioContent.map((project, index) => {
+          return (<ProjectGallery projectInfo={project} key={index}/>);
+        })}
+        
       </div>
     </>
   );

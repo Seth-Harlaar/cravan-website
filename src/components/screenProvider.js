@@ -1,6 +1,6 @@
 import React, { createContext, useEffect, useState } from "react";
 
-import {scrSmall, scrMed} from "../utils/globals";
+import {scrSmall, scrMed, scrLrg} from "../utils/globals";
 
 
 const ScreenContext = createContext();
@@ -10,6 +10,7 @@ function ScreenProvider({children}){
   const [isSmallScreen, setIsSmallScreen] = useState(false);
   const [isMedScreen, setIsMedScreen] = useState(false);
   const [isLrgSCreen, setIsLrgScreen] = useState(false);
+  const [isMegaScreen, setIsMegaScreen] = useState(false);
 
   
   // listen for window resizes and set state
@@ -20,6 +21,7 @@ function ScreenProvider({children}){
       setIsSmallScreen(wid <= scrSmall);
       setIsMedScreen(wid <= scrMed);
       setIsLrgScreen(wid > scrMed);
+      setIsMegaScreen(wid > scrLrg);
     };
 
     window.addEventListener('resize', handleResize);
@@ -33,6 +35,7 @@ function ScreenProvider({children}){
     isSmallScreen,
     isMedScreen,
     isLrgSCreen,
+    isMegaScreen,
   }
 
   return(

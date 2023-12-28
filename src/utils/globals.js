@@ -7,7 +7,7 @@ const scrLrg = 1024;        // monitors/laptops
 
 
 // website width sizes
-// const widthMax = 1460;        // max width of website
+const widthMax = 1460;        // max width of website
 
 
 
@@ -15,5 +15,6 @@ const scrLrg = 1024;        // monitors/laptops
 
 
 export {
-  scrSmall, scrMed, scrLrg
+  scrSmall, scrMed, scrLrg,
+  widthMax
 };

@@ -1,7 +1,6 @@
 import React from "react";
 
 
-
 function PageBanner ({title, description, isSmallScreen}) {
   const heightAndPadding = isSmallScreen ? ' h-[300px] ' : ' h-[420px] ';
   return (

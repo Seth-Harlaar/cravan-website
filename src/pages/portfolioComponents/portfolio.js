@@ -1,17 +1,15 @@
 import React, { useContext } from "react";
+
+// components
 import PageBanner from "../../components/pageBanner";
 import { ScreenContext } from "../../components/screenProvider";
-
 import ProjectGallery from "./projectGallery"
 import portfolioContent from "../../assets/content/portfolioContent";
-
 
 
 function Portfolio() {
 
   const {isSmallScreen} = useContext(ScreenContext);
-
-
 
   return (
     <>
@@ -27,3 +25,6 @@ function Portfolio() {
 }
   
 export default Portfolio;
+
+
+// inspiration: https://dribbble.com/shots/2657854-Project-Gallery/attachments/600711?mode=media

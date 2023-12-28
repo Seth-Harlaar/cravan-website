@@ -5,14 +5,12 @@ import { ScreenContext } from "../../components/screenProvider";
 import { IoMdArrowDropleftCircle } from "react-icons/io";
 import { IoMdArrowDroprightCircle } from "react-icons/io";
 
-// info
-import pic from "../../assets/pictures/homePortPics/additions_1.jpg";
-
 
 
 function PictureSlider({imageList}){
   const imageListLength = imageList.length;
 
+  // states
   const {isSmallScreen, isLrgSCreen, isMegaScreen} = useContext(ScreenContext);
 
   const [index, setIndex] = useState(0);
@@ -20,6 +18,7 @@ function PictureSlider({imageList}){
 
   const [canMoveRight, setCanMoveRight] = useState(true);
   const [canMoveLeft, setCanMoveLeft] = useState(false);
+
 
   // when index changes, update moveability
   useEffect(() => {
@@ -31,8 +30,9 @@ function PictureSlider({imageList}){
     if(index === 0){
       setCanMoveLeft(false);
     }
-  }, [index]);
+  }, [index, imageListLength]);
 
+  // index change handlers
   function decrementIndex(){
     setIndex(index - 1);
   }
@@ -41,6 +41,7 @@ function PictureSlider({imageList}){
   }
 
 
+  // moving images right and left
   function moveLeft(){
     if(canMoveLeft){
       setOffset(offset + 100);
@@ -65,6 +66,8 @@ function PictureSlider({imageList}){
     }
   }
 
+
+  // styles
   const sliderOffset = `${offset}%`;
 
   const sliderOffsetStyle = {
@@ -79,9 +82,6 @@ function PictureSlider({imageList}){
     sliderHeight = " h-[762px] ";
   }
   
-
-
-
   const pictureStyles = ` ${sliderHeight} min-w-full object-cover px-2 select-none`;
   const padderStyles = ` ${sliderHeight} min-w-full flex-none bg-lightBgDark px-2`;
   const sliderStyles = ` ${sliderHeight} relative h-[250px] w-full duration-100 `;
@@ -98,7 +98,7 @@ function PictureSlider({imageList}){
           <div className={sliderStyles} style={sliderOffsetStyle}>
             <div className="absolute flex w-full">
               <div className={padderStyles}/>
-              
+              {/* create each image */}
               {imageList.map((image, index) => {
                 return( <img className={pictureStyles} src={image} alt={"gallery"} key={index}/> );
               })}

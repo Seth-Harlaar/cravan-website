@@ -12,7 +12,7 @@ const portfolioContent = [
     ]
   },
   {
-    "shortDesc" : "Modern, Sustainable, Condos",
+    "shortDesc" : "Modern, Sustainable",
     "title": "Toronto, Ontario",
     "longDesc": "Nestled in Toronto's vibrant core, these sustainable condos blend modern architecture with eco-friendly design. Each unit boasts state-of-the-art amenities, energy-efficient systems, and a community focus on green living. Enjoy urban convenience while minimizing your ecological footprint.",
     "imageList": [

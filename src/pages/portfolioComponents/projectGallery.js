@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 
 import PictureSlider from "./pictureSlider";
 
@@ -7,7 +7,7 @@ function ProjectGallery({projectInfo}){
 
   return(
     <>
-      <div className="pt-10">
+      <div className="pt-32">
         <PictureSlider imageList={projectInfo.imageList}/>
         <div>
           <div className={ " max-w-screen-lg w-8/12 m-auto text-justify "}>
